@@ -5,9 +5,10 @@ import lombok.Data;
 @Data
 public class Product {
     private Long id;
-    private String name;
-    private Double price;
+    private String title;
     private String description;
-    private String imageUrl;
+    private Double price;
+    private String image;
     private String category;
+    private String seller;
 }
