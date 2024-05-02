@@ -7,13 +7,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-
-    Optional<User> findById(Long aLong);
-
-    Optional<User> findByName(String name);
-
-    List<User> findAllByNameEndingWith(String suffix);
-
-    @Override
-    User save(User entity);
+  List<User> findByName(String name);
 }
