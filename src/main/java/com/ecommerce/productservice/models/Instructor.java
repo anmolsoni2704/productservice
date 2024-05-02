@@ -6,6 +6,8 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.List;
 
@@ -15,6 +17,7 @@ import java.util.List;
 public class Instructor extends User{
     private Double salary;
     private String skill;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "instructor", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "instructor", cascade = CascadeType.REMOVE)
+    @Fetch(FetchMode.JOIN)
     private List<Batch> batch;
 }
